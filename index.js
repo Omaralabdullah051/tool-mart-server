@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 //* internal imports
+const partsHandler = require("./router/partsHandler");
 const { notFoundHandler } = require("./middlewares/common/errorHandler");
 const { errorHander } = require("./middlewares/common/errorHandler");
 
@@ -43,6 +44,9 @@ const port = process.env.PORT || 5000;
 app.get("/", (req, res) => {
   res.send("Hello!programmers");
 });
+
+//* routing setup
+app.use("/", partsHandler);
 
 //* 404 not found handler
 app.use(notFoundHandler);
