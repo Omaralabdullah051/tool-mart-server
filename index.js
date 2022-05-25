@@ -7,6 +7,7 @@ const cors = require("cors");
 //* internal imports
 const partsHandler = require("./router/partsHandler");
 const orderHandler = require("./router/orderHandler");
+const reviewHandler = require("./router/reviewHandler");
 const { notFoundHandler } = require("./middlewares/common/errorHandler");
 const { errorHander } = require("./middlewares/common/errorHandler");
 
@@ -49,6 +50,7 @@ app.get("/", (req, res) => {
 //* routing setup
 app.use("/", partsHandler);
 app.use("/order", orderHandler);
+app.use("/review", reviewHandler);
 
 //* 404 not found handler
 app.use(notFoundHandler);
