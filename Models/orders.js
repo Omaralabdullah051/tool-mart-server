@@ -43,7 +43,15 @@ const orderSchema = mongoose.Schema({
   },
   paid: {
     type: Boolean,
-    require: true,
+    required: true,
+  },
+  img: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
   },
 });
 

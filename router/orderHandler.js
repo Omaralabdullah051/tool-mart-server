@@ -11,10 +11,15 @@ const {
 } = require("../controller/deleteOrderController");
 
 const Orders = require("../Models/orders");
+const {
+  singleOrdersController,
+} = require("../controller/singleOrdersController");
 
 router.post("/post", postOrderController);
 
 router.get("/get", getOrderController);
+
+router.get("/getorders/:id", singleOrdersController);
 
 router.delete("/delete", deleteOrderController);
 
