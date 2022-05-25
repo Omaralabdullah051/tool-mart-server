@@ -33,6 +33,14 @@ const orderSchema = mongoose.Schema({
       message: (props) => `${props.value} is not a valid BD number`,
     },
   },
+  toolName: {
+    type: String,
+    required: [true, "Tool name is required"],
+  },
+  quantity: {
+    type: Number,
+    required: [true, "Quantity is required"],
+  },
 });
 
 const Orders = mongoose.model("Order", orderSchema);

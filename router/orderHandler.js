@@ -4,10 +4,13 @@ const express = require("express");
 const router = express.Router();
 
 //* internal imports
-const { orderController } = require("../controller/orderController");
+const { postOrderController } = require("../controller/orderController");
+const { getOrderController } = require("../controller/getOrderController");
 
 const Orders = require("../Models/orders");
 
-router.post("/post", orderController);
+router.post("/post", postOrderController);
+
+router.get("/get", getOrderController);
 
 module.exports = router;

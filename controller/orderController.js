@@ -15,11 +15,7 @@ const handleMongooseErrors = (err) => {
   return errors;
 };
 
-module.exports = {
-  handleMongooseErrors,
-};
-
-const orderController = async (req, res) => {
+const postOrderController = async (req, res) => {
   console.log(req.body);
   try {
     const newOrders = new Orders(req.body);
@@ -32,5 +28,5 @@ const orderController = async (req, res) => {
 };
 
 module.exports = {
-  orderController,
+  postOrderController,
 };
