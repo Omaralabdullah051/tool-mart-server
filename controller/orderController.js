@@ -4,7 +4,14 @@ const Orders = require("../Models/orders");
 //* Mongoose error handler function
 const handleMongooseErrors = (err) => {
   console.log(err.message);
-  let errors = { name: "", email: "", address: "", phone: "" };
+  let errors = {
+    name: "",
+    email: "",
+    address: "",
+    phone: "",
+    quantity: "",
+    toolName: "",
+  };
 
   if (err.message.includes("Order validation failed")) {
     Object.values(err.errors).forEach(({ properties }) => {

@@ -41,6 +41,10 @@ const orderSchema = mongoose.Schema({
     type: Number,
     required: [true, "Quantity is required"],
   },
+  paid: {
+    type: Boolean,
+    require: true,
+  },
 });
 
 const Orders = mongoose.model("Order", orderSchema);
