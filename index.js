@@ -8,6 +8,7 @@ const cors = require("cors");
 const partsHandler = require("./router/partsHandler");
 const orderHandler = require("./router/orderHandler");
 const reviewHandler = require("./router/reviewHandler");
+const userHandler = require("./router/userHandler");
 const { notFoundHandler } = require("./middlewares/common/errorHandler");
 const { errorHander } = require("./middlewares/common/errorHandler");
 
@@ -51,6 +52,7 @@ app.get("/", (req, res) => {
 app.use("/", partsHandler);
 app.use("/order", orderHandler);
 app.use("/review", reviewHandler);
+app.use("/user", userHandler);
 
 //* 404 not found handler
 app.use(notFoundHandler);

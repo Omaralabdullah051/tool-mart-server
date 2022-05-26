@@ -17,6 +17,11 @@ const reviewSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
+  img: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   rating: {
     type: Number,
     required: [true, "Rating is required"],
