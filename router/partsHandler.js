@@ -1,5 +1,8 @@
 //* external imports
 const express = require("express");
+const {
+  deletePartsController,
+} = require("../controller/deletePartsController");
 
 const router = express.Router();
 
@@ -16,5 +19,7 @@ router.get("/parts", getPartsController);
 router.get("/getparts/:id", singlePartsController);
 
 router.post("/postpart", postPartsController);
+
+router.delete("/deletepart/:id", deletePartsController);
 
 module.exports = router;

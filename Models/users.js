@@ -7,6 +7,16 @@ const userSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  img: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   role: {
     type: String,
     trim: true,

@@ -9,13 +9,15 @@ const putOrderController = async (req, res) => {
   try {
     const id = req.query.id;
     const status = req.body;
-    console.log(status);
     const result = await Orders.findByIdAndUpdate(
       { _id: id },
       {
         $set: status,
       },
-      { upsert: true }
+      {
+        new: true,
+        useFindAndModify: false,
+      }
     );
     res.status(200).json({
       message: "Successs",
