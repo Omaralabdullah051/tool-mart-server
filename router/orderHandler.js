@@ -14,10 +14,11 @@ const Orders = require("../Models/orders");
 const {
   singleOrdersController,
 } = require("../controller/singleOrdersController");
+const verifyJWT = require("../middlewares/jwt/verifyJwt");
 
 router.post("/post", postOrderController);
 
-router.get("/get", getOrderController);
+router.get("/get", verifyJWT, getOrderController);
 
 router.get("/getorders/:id", singleOrdersController);
 
