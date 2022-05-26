@@ -20,6 +20,8 @@ const {
 } = require("../controller/getAllOrderController");
 const { putOrderController } = require("../controller/putOrderController");
 const verifyAdmin = require("../middlewares/admin/verifyAdmin");
+const paymentController = require("../controller/paymentController");
+const { putOrderController2 } = require("../controller/putOrderController2");
 
 router.post("/post", postOrderController);
 
@@ -32,5 +34,9 @@ router.get("/getorders/:id", singleOrdersController);
 router.put("/put", verifyJWT, verifyAdmin, putOrderController);
 
 router.delete("/delete", deleteOrderController);
+
+router.post("/create-payment-intent", verifyJWT, paymentController);
+
+router.put("/putagain/:id", putOrderController2);
 
 module.exports = router;
