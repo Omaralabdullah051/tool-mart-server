@@ -17,16 +17,16 @@ const app = express();
 
 //* enable contact with dotenv file
 dotenv.config();
+app.use(cors());
+// //* cors config
+// const corsConfig = {
+//   origin: true,
+//   credentials: true,
+// };
 
-//* cors config
-const corsConfig = {
-  origin: true,
-  credentials: true,
-};
-
-//* enable cors policy
-app.use(cors(corsConfig));
-app.options("*", cors(corsConfig));
+// //* enable cors policy
+// app.use(cors(corsConfig));
+// app.options("*", cors(corsConfig));
 
 //* request parser
 app.use(express.json());
